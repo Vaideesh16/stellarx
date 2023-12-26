@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StellarX Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        font-weight: 550;
+        font-style: normal;
+        font-size: 13px;
+      }
+
+      header {
+        background-color: #000000e7; /* Black background */
+        color: white;
+        padding: 20px; /* Slightly reduced padding */
+        text-align: center;
+        display: flex;
+        justify-content: space-between; /* Align items to the ends of the container */
+        align-items: center;
+      }
+
+      h1 {
+        margin: 0; /* Remove default margin for h1 */
+      }
+
+      nav {
+        display: flex;
+        gap: 15px; /* Adjust the space between buttons */
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        border: 2px solid white;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+      }
+
+      nav a:hover {
+        background-color: white;
+        color: #000; /* Change text color on hover */
+      }
+
+      #cartButton {
+        background-color: #4caf50; /* Green color for the cart button */
+        padding: 10px 15px; /* Adjust padding for the cart button */
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #cartButton:hover {
+        background-color: #45a049; /* Darker green on hover */
+      }
+
+      section {
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .main-photo {
+        text-align: center;
+        background-image: url("X_collection_olive_hoodie_photo_main_page_1400x (1).webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 400px; /* Adjust the height as needed */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .product {
+        width: calc(33.33% - 20px);
+        margin: 10px;
+        text-align: center;
+        border-radius: 10px;
+        border: 4px solid #ddd;
+        padding: 10px;
+      }
+
+      .product img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 8px;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      h3 {
+        text-align: center;
+        margin-top: 40px;
+      }
+      a:link {
+        color: white;
+      }
+      a:visited {
+        color: white;
+      }
+      a:hover {
+        color: grey;
+      }
+      p {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="shop.html" style="text-decoration: none;"><img src="StellarX_Shop.png" alt="Stellar Shop"></a>
+      <a href="index.html" style="text-decoration: none; font-size: 17px;">Home</a>
+      <a href="#" style="text-decoration: none; font-size: 17px;">Products</a>
+      <a href="#" style="text-decoration: none; font-size: 17px;">Contact</a>
+      <a href="#" id="cartButton" style="text-decoration: none; font-size: 17px;">Cart</a>
+    </header>
+
+    <section class="main-photo"></section>
+    <h3 style="font-family: DIN Neuzeit Grotesk,sans-serif; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-style: normal;">Trending</h3>
+    <section>
+      <div class="product">
+        <img
+          src="StarlinkAnywhereTumblerMiniMilitaryGreen_600x.webp"
+          alt="Product 1"
+        />
+        <p style="padding-top: 15px;">StellarX Anywhere Tumbler</p>
+        <p>799 INR</p>
+        <button onclick="addToCart(1)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="STICKER-PACK-ALT1_600x.webp" alt="Product 2" />
+        <p style="padding-top: 15px;">Stickers</p>
+        <p>299 INR</p>
+        <button onclick="addToCart(2)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="kidsmerch-1.webp" alt="Product 3" />
+        <p style="padding-top: 15px;">Kid's StellarX Space Suit</p>
+        <p>2499 INR</p>
+        <button onclick="addToCart(3)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="2.png" alt="Product 4" />
+        <p style="padding-top: 15px;">StellarX Oversized Fit Sweatshirt</p>
+        <p>2299 INR</p>
+        <button onclick="addToCart(4)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="3.png" alt="Product 5" />
+        <p style="padding-top: 15px;">StellarX Collection Sweatshirt</p>
+        <p>2499 INR</p>
+        <button onclick="addToCart(5)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="4.png" alt="Product 6" />
+        <p style="padding-top: 15px;">StellarX Genuine Black Sweatshirt</p>
+        <p>2699 INR</p>
+        <button onclick="addToCart(6)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="5.png" alt="Product 7" />
+        <p style="padding-top: 15px;">StellarX Special Sweatshirt</p>
+        <p>2499 INR</p>
+        <button onclick="addToCart(7)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="6.png" alt="Product 8" />
+        <p style="padding-top: 15px;">StellarX One Sweatshirt</p>
+        <p>2499 INR</p>
+        <button onclick="addToCart(8)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="7.png" alt="Product 9" />
+        <p style="padding-top: 15px;">StellarX Originals Sweatshirt</p>
+        <p>2599 INR</p>
+        <button onclick="addToCart(9)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="8.png" alt="Product 10" />
+        <p style="padding-top: 15px;">StellarX Chandrayaan-2 Mug</p>
+        <p>279 INR</p>
+        <button onclick="addToCart(10)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="9.png" alt="Product 11" />
+        <p style="padding-top: 15px;">StellarX Mangalyaan Mug</p>
+        <p>279 INR</p>
+        <button onclick="addToCart(11)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="10.png" alt="Product 12" />
+        <p style="padding-top: 15px;">GSLV F-12 Keychain</p>
+        <p>149 INR</p>
+        <button onclick="addToCart(12)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="11.png" alt="Product 13" />
+        <p style="padding-top: 15px;">StellarX X Gucci Backpack</p>
+        <p>5999 INR</p>
+        <button onclick="addToCart(13)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="12.png" alt="Product 14" />
+        <p style="padding-top: 15px;">StellarX X Louis Vuitton</p>
+        <p>7999 INR</p>
+        <button onclick="addToCart(14)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="13.png" alt="Product 15" />
+        <p style="padding-top: 15px;">StellarX Pink Sweatshirt</p>
+        <p>2499 INR</p>
+        <button onclick="addToCart(15)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="14.png" alt="Product 16" />
+        <p style="padding-top: 15px;">StellarX Black Sweatshirt</p>
+        <p>2999 INR</p>
+        <button onclick="addToCart(16)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="15.png" alt="Product 17" />
+        <p style="padding-top: 15px;">StellarX Exclusive Sweatshirt</p>
+        <p>2999 INR</p>
+        <button onclick="addToCart(17)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="16.png" alt="Product 18" />
+        <p style="padding-top: 15px;">StellarX Advance Hoodie</p>
+        <p>2999 INR</p>
+        <button onclick="addToCart(18)" type="button" class="btn btn-primary">Add to Cart</button>
+      </div>
+
+    <footer>StellarX &copy; 2023</footer>
+
+    <script>
+      let cart = [];
+      function addToCart(productId, productName, productPrice) {
+        const product = {
+          id: productId,
+          name: productName,
+          price: productPrice,
+        };
+        cart.push(product);
+        updateCartButton();
+        alert("Product added to cart");
+      }
+
+      function updateCartButton() {
+        const cartButton = document.getElementById("cartButton");
+        cartButton.innerHTML = `Cart (${cart.length})`;
+      }
+
+      function generateProductSection(
+        productId,
+        productName,
+        productPrice,
+        imageUrl
+      ) {
+        const productSection = document.getElementById("productsSection");
+
+        const productDiv = document.createElement("div");
+        productDiv.className = "product";
+
+        const img = document.createElement("img");
+        img.src = imageUrl;
+        img.alt = productName;
+
+        const nameParagraph = document.createElement("p");
+        nameParagraph.textContent = productName;
+
+        const priceParagraph = document.createElement("p");
+        priceParagraph.textContent = `$${productPrice.toFixed(2)}`;
+
+        const addButton = document.createElement("button");
+        addButton.textContent = "Add to Cart";
+        addButton.onclick = function () {
+          addToCart(productId, productName, productPrice);
+        };
+
+        productDiv.appendChild(img);
+        productDiv.appendChild(nameParagraph);
+        productDiv.appendChild(priceParagraph);
+        productDiv.appendChild(addButton);
+
+        productSection.appendChild(productDiv);
+      }
+      const productsData = [
+        {
+          id: 1,
+          name: "Starlink Tumbler",
+          price: 19.99,
+          imageUrl: "StarlinkAnywhereTumblerMiniMilitaryGreen_600x.webp",
+        },
+        {
+          id: 2,
+          name: "Starlink Stickers",
+          price: 29.99,
+          imageUrl: "STICKER-PACK-ALT1_600x.webp",
+        },
+        {
+          id: 3,
+          name: "Kids Grey Outfit",
+          price: 39.99,
+          imageUrl: "kidsmerch-1.webp",
+        },
+      ];
+
+      productsData.forEach((product) => {
+        generateProductSection(
+          product.id,
+          product.name,
+          product.price,
+          product.imageUrl
+        );
+      });
+
+      // Call the updateCartButton function to initialize the cart button
+      updateCartButton();
+    </script>
+  </body>
+</html>
